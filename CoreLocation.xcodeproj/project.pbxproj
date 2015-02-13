@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56216FEE1A4FAFD400C6CB06 /* loc.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 56216FED1A4FAFD400C6CB06 /* loc.gpx */; };
+		56216FF01A4FB48800C6CB06 /* home.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 56216FEF1A4FB48800C6CB06 /* home.gpx */; };
+		56216FF21A4FB5F400C6CB06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56216FF11A4FB5F400C6CB06 /* MapKit.framework */; };
 		56A7B5DF1A4F8930003947B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A7B5DE1A4F8930003947B0 /* AppDelegate.swift */; };
 		56A7B5E11A4F8930003947B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A7B5E01A4F8930003947B0 /* ViewController.swift */; };
 		56A7B5E41A4F8930003947B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A7B5E21A4F8930003947B0 /* Main.storyboard */; };
 		56A7B5E61A4F8930003947B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56A7B5E51A4F8930003947B0 /* Images.xcassets */; };
 		56A7B5E91A4F8930003947B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56A7B5E71A4F8930003947B0 /* LaunchScreen.xib */; };
 		56A7B5F51A4F8930003947B0 /* CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A7B5F41A4F8930003947B0 /* CoreLocationTests.swift */; };
+		56A7B5FF1A4FA302003947B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A7B5FE1A4FA302003947B0 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56216FED1A4FAFD400C6CB06 /* loc.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = loc.gpx; sourceTree = "<group>"; };
+		56216FEF1A4FB48800C6CB06 /* home.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = home.gpx; sourceTree = "<group>"; };
+		56216FF11A4FB5F400C6CB06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		56A7B5D91A4F8930003947B0 /* CoreLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A7B5DD1A4F8930003947B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A7B5DE1A4F8930003947B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		56A7B5EE1A4F8930003947B0 /* CoreLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A7B5F31A4F8930003947B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A7B5F41A4F8930003947B0 /* CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTests.swift; sourceTree = "<group>"; };
+		56A7B5FE1A4FA302003947B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56216FF21A4FB5F400C6CB06 /* MapKit.framework in Frameworks */,
+				56A7B5FF1A4FA302003947B0 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +69,10 @@
 		56A7B5D01A4F8930003947B0 = {
 			isa = PBXGroup;
 			children = (
+				56216FF11A4FB5F400C6CB06 /* MapKit.framework */,
+				56216FEF1A4FB48800C6CB06 /* home.gpx */,
+				56216FED1A4FAFD400C6CB06 /* loc.gpx */,
+				56A7B5FE1A4FA302003947B0 /* CoreLocation.framework */,
 				56A7B5DB1A4F8930003947B0 /* CoreLocation */,
 				56A7B5F11A4F8930003947B0 /* CoreLocationTests */,
 				56A7B5DA1A4F8930003947B0 /* Products */,
@@ -161,6 +175,11 @@
 				TargetAttributes = {
 					56A7B5D81A4F8930003947B0 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					56A7B5ED1A4F8930003947B0 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -193,7 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				56A7B5E41A4F8930003947B0 /* Main.storyboard in Resources */,
+				56216FF01A4FB48800C6CB06 /* home.gpx in Resources */,
 				56A7B5E91A4F8930003947B0 /* LaunchScreen.xib in Resources */,
+				56216FEE1A4FAFD400C6CB06 /* loc.gpx in Resources */,
 				56A7B5E61A4F8930003947B0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +426,7 @@
 				56A7B5FA1A4F8930003947B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56A7B5FB1A4F8930003947B0 /* Build configuration list for PBXNativeTarget "CoreLocationTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +435,7 @@
 				56A7B5FD1A4F8930003947B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

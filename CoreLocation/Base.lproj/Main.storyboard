@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CoreLocation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9X-rX-H4g">
+                                <rect key="frame" x="16" y="61" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XcZ-HC-ubm">
+                                <rect key="frame" x="16" y="119" width="563" height="355"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gd-VB-CmH">
+                                <rect key="frame" x="258" y="497" width="84" height="30"/>
+                                <state key="normal" title="GetLocation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Sef-WT-BZl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KA4-ZP-SN8">
+                                <rect key="frame" x="212" y="543" width="177" height="30"/>
+                                <state key="normal" title="Enable Region Monitoring">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="INq-ZM-Dkh"/>
+                                    <action selector="regionMonitoring:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="C4k-u0-ckx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XcZ-HC-ubm" secondAttribute="trailing" constant="5" id="1HS-X0-YX9"/>
+                            <constraint firstAttribute="centerY" secondItem="2Gd-VB-CmH" secondAttribute="centerY" constant="-212" id="36i-7i-n4f"/>
+                            <constraint firstAttribute="centerX" secondItem="2Gd-VB-CmH" secondAttribute="centerX" id="3at-ek-GYh"/>
+                            <constraint firstItem="XcZ-HC-ubm" firstAttribute="top" secondItem="f9X-rX-H4g" secondAttribute="bottom" constant="37.5" id="7OV-mp-Due"/>
+                            <constraint firstItem="2Gd-VB-CmH" firstAttribute="top" secondItem="XcZ-HC-ubm" secondAttribute="bottom" constant="23" id="Ech-8Z-Vfg"/>
+                            <constraint firstItem="f9X-rX-H4g" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="H6C-DV-iQU"/>
+                            <constraint firstItem="2Gd-VB-CmH" firstAttribute="top" secondItem="f9X-rX-H4g" secondAttribute="bottom" constant="415" id="RkK-op-juJ"/>
+                            <constraint firstItem="XcZ-HC-ubm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="TW6-EK-Jm6"/>
+                            <constraint firstItem="f9X-rX-H4g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="csq-2h-JzV"/>
+                            <constraint firstItem="KA4-ZP-SN8" firstAttribute="top" secondItem="2Gd-VB-CmH" secondAttribute="bottom" constant="16" id="dth-ux-MAS"/>
+                            <constraint firstAttribute="centerX" secondItem="KA4-ZP-SN8" secondAttribute="centerX" id="juq-IA-k4F"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="f9X-rX-H4g" id="Tde-Ub-nr1"/>
+                        <outlet property="mapView" destination="XcZ-HC-ubm" id="1AA-Dg-Dsa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
